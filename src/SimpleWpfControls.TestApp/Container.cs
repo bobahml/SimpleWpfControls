@@ -12,8 +12,6 @@ namespace SimpleWpfControls.TestApp
             _container = RegisterDependencies();
         }
 
-
-
         public static IContainer AutofacContainer
         {
             get { return _container; }
