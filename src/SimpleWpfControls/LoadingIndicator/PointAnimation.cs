@@ -2,8 +2,10 @@
 
 namespace SimpleWpfControls.LoadingIndicator
 {
-    public class PointAnimation
+   internal class PointAnimation
     {
         public TimeSpan BeginTime { get; set; }
+        public double StartAngle { get; set; }
+        public double StopAngle { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace SimpleWpfControls.TestApp.LoadingIndicator.View
     /// <summary>
     /// Interaction logic for LoadingIndicatorTestView.xaml
     /// </summary>
-    public partial class LoadingIndicatorTestView : UserControl
+    public partial class LoadingIndicatorTestView
     {
         public LoadingIndicatorTestView()
         {

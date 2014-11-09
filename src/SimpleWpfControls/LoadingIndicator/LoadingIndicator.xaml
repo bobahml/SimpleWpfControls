@@ -30,7 +30,7 @@
                     <Setter.Value>
                         <TransformGroup>
                             <TranslateTransform X = "{StaticResource StartingPointX}" Y = "{StaticResource StartingPointY}"/>
-                            <RotateTransform Angle = "0"/>
+                            <RotateTransform />
                         </TransformGroup>
                     </Setter.Value>
                 </Setter>
@@ -48,8 +48,8 @@
             </Style>
 
         </Grid.Resources>
-      
-        <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=local:LoadingIndicator}, Path=Points}">
+
+        <ItemsControl Name="PointsControl">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="local:PointAnimation">
                     <Border  Style="{StaticResource BorderStyle}">
@@ -61,12 +61,14 @@
                                         DecelerationRatio="0.25"
                                         TargetProperty = "(UIElement.RenderTransform).(RotateTransform.Angle)"
                                         BeginTime = "{Binding BeginTime, Mode=OneTime}"
-                                        Duration = "{StaticResource StoryBoardDuration}"
                                         RepeatBehavior = "Forever">
-                                        <DoubleAnimation From = "0" To = "360" Duration = "{StaticResource StoryBoardDuration}"/>
+                                        <DoubleAnimation From = "{Binding StartAngle, Mode=OneTime}"
+                                                         To = "{Binding StopAngle, Mode=OneTime}" 
+                                                         Duration = "{StaticResource StoryBoardDuration}"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
+
                         </Border.Triggers>
                         <Ellipse Style = "{StaticResource EllipseStyle}"/>
                     </Border>
