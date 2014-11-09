@@ -50,6 +50,7 @@
     <Compile Include="LoadingIndicator\LoadingIndicator.xaml.cs">
       <DependentUpon>LoadingIndicator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoadingIndicator\PointAnimation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
